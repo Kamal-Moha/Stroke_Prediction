@@ -1,8 +1,6 @@
------------------------
-
 # Revolutionizing Stroke Diagnosis: A Highly Accurate and Efficient Machine Learning Model.
 
-#### Harnessing the Power of Data to Identify Patients at Risk of Stroke with incredible results.
+### Harnessing the Power of Data to Identify Patients at Risk of Stroke with incredible results.
 
 ### Author: 
 Kamal Muhamed
