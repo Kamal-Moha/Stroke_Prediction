@@ -1,25 +1,3 @@
-# Stroke_Prediction
-This project predicts whether someone will have a stroke or not
-
-
-
-My final model with the best results is the KNeighbors(KNN) model
-
-The evaluation metrics of the KNN model show that it has performed extremely well on the given dataset. The model has high recall for both the positive and negative classes, indicating that it can accurately identify both people with stroke and people without stroke. The f1 score, which is the harmonic mean of precision and recall, is also high for both classes. Moreover, the accuracy and AUC score are both 0.97, indicating that the model can make accurate predictions overall.
-
-![auc](https://user-images.githubusercontent.com/103885606/230763263-60d5d9f5-4133-4fe0-802d-a6db8e4b058b.png)
-
-
-Given the high performance of the KNN model, it can be useful in production if the dataset used to train the model is representative of the population it is applied to. To use the model in production, we have to ensure that there is balance in the dataset being used.
-
-Balance in our target vector is very important in the dataset as that limits bias & improves results.
-
-So Yes my model will be useful in production and will make correct predictions using a balanced dataset.
-
-
-
-
-
 -----------------------
 
 # Revolutionizing Stroke Diagnosis: A Highly Accurate and Efficient Machine Learning Model.
@@ -33,7 +11,7 @@ Kamal Muhamed
 Detecting Heart Stroke in patients is difficult using traditional methods. We are solving this by making the detection of stroke in a patient automated/semi-automated using advanced technology by studying the outlining patterns associated with people who are known to have stroke. 
 
 ### Data
-The dataset used in this project is the sales_predictions.csv
+The dataset used in this project is the stroke-data.csv
 
 ## Getting Started
 ### Prerequisites
@@ -48,12 +26,19 @@ Required packages - pandas, numpy, scikit-learn, seaborn, matplotlib
 ## Results
 Here are some of the insights after our analysis
 
+![age](https://user-images.githubusercontent.com/103885606/232896533-f91f52ec-f643-4d56-a806-6bf7bdc7643b.png)
+
+![smoking](https://user-images.githubusercontent.com/103885606/232896581-ad47af23-e461-4c84-9538-c9a3a5d4f285.png)
+
 
 ## Model Used 
 I used a KNN to make the Stroke predictions.
 
 Our model peformed amazingly having a recall of 100% meaning that our model can predict 100% of the time patients with stroke. It also has a precision of 100%
 meaning our model can predict 100% of the time patients that don't have stroke
+
+![score](https://user-images.githubusercontent.com/103885606/232896745-f6c6d51d-197b-460f-84fb-dc2b508e2d3c.JPG)
+
 ## Limitations & Next Steps
 
 ### Limitations
