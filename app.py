@@ -47,10 +47,11 @@ def predict_stroke(gender, age, hypertension, heart_disease, ever_married,
 
 def main():
   st.title('Heart Stroke Prediction')
+  st.header('Fill in the below Features to determine wthether you have Stroke or not?')
   left_column, right_column = st.columns(2)
   with left_column:
     gender = st.radio(
-        'Your gender:',
+        'Your gender?:',
         np.unique(df['gender']))
     
 
