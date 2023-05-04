@@ -3,12 +3,8 @@ import numpy as np
 import pandas as pd
 import pickle
 from sklearn.preprocessing import  LabelEncoder
-file_path = '/content/drive/MyDrive/CODING DOJO DS BOOTCAMP/PROJECTS/PROJECT 2/Stroke Prediction Dataset'
 
 df = pd.read_csv(f'stroke-data.csv')
-
-#load label encoder
-le=LabelEncoder()
 
 # Load our model
 pickle_in = open(f'best_knn_model.pkl', 'rb')
@@ -20,6 +16,7 @@ def predict_stroke(gender, age, hypertension, heart_disease, ever_married,
        smoking_status):
   le=LabelEncoder()
 
+#   Label Encoding
   le.fit(df['gender'].value_counts().index)
   gender = le.transform([f'{gender}'])[0]
 
