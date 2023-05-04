@@ -5,13 +5,13 @@ import pickle
 from sklearn.preprocessing import  LabelEncoder
 file_path = '/content/drive/MyDrive/CODING DOJO DS BOOTCAMP/PROJECTS/PROJECT 2/Stroke Prediction Dataset'
 
-df = pd.read_csv(f'{file_path}/healthcare-dataset-stroke-data.csv')
+df = pd.read_csv('stroke-data.csv')
 
 #load label encoder
 le=LabelEncoder()
 
 # Load our model
-pickle_in = open(f'{file_path}/best_knn_model.pkl', 'rb')
+pickle_in = open('best_knn_model.pkl', 'rb')
 model = pickle.load(pickle_in)
 
 
