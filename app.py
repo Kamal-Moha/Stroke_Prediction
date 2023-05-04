@@ -3,11 +3,15 @@ import numpy as np
 import pandas as pd
 import pickle
 from sklearn.preprocessing import  LabelEncoder
+file_path = '/content/drive/MyDrive/CODING DOJO DS BOOTCAMP/PROJECTS/PROJECT 2/Stroke Prediction Dataset'
 
-df = pd.read_csv(f'stroke-data.csv')
+df = pd.read_csv(f'{file_path}/healthcare-dataset-stroke-data.csv')
+
+#load label encoder
+le=LabelEncoder()
 
 # Load our model
-pickle_in = open(f'best_knn_model.pkl', 'rb')
+pickle_in = open(f'{file_path}/best_knn_model.pkl', 'rb')
 model = pickle.load(pickle_in)
 
 
@@ -16,7 +20,6 @@ def predict_stroke(gender, age, hypertension, heart_disease, ever_married,
        smoking_status):
   le=LabelEncoder()
 
-#   Label Encoding
   le.fit(df['gender'].value_counts().index)
   gender = le.transform([f'{gender}'])[0]
 
@@ -51,10 +54,10 @@ def main():
         np.unique(df['gender']))
     
 
-  age = st.number_input('Enter your Age?')
+  age = st.number_input('Enter your Age?', value=0, step=1)
 
   hypertension = st.radio(
-        'Have hypertension:',
+        'Have hypertension?:',
         np.unique(['Yes', 'No']))
 
   if hypertension == 'Yes':
@@ -64,7 +67,7 @@ def main():
 
 
   heart_disease = st.radio(
-        'Have Heart Disease:',
+        'Have Heart Disease?:',
         np.unique(['Yes', 'No']))
   if heart_disease == 'Yes':
     heart_disease = 1
@@ -77,7 +80,7 @@ def main():
         np.unique(df['ever_married']))
   
   work_type = st.radio(
-        'Work Type:',
+        'Work Type?:',
         np.unique(df['work_type']))
 
   residence_type = st.radio(
