@@ -10,12 +10,6 @@ df = pd.read_csv(f'{file_path}/healthcare-dataset-stroke-data.csv')
 #load label encoder
 le=LabelEncoder()
 
-#df['gender']=label.fit_transform(df['gender'])
-#df['ever_married']=label.fit_transform(df['ever_married'])
-#df['work_type']=label.fit_transform(df['work_type'])
-#df['Residence_type']=label.fit_transform(df['Residence_type'])
-#df['smoking_status']=label.fit_transform(df['smoking_status'])
-
 # Load our model
 pickle_in = open(f'{file_path}/best_knn_model.pkl', 'rb')
 model = pickle.load(pickle_in)
@@ -53,7 +47,6 @@ def predict_stroke(gender, age, hypertension, heart_disease, ever_married,
 
 def main():
   st.title('Heart Stroke Prediction')
-  #gender = st.text_input('Enter Your Gender?')
   left_column, right_column = st.columns(2)
   with left_column:
     gender = st.radio(
@@ -61,24 +54,32 @@ def main():
         np.unique(df['gender']))
     
 
+  age = st.number_input('Enter your Age?')
 
-  age = st.slider('Your Age', 0.0, max(df["age"]), 1.0)
+  hypertension = st.radio(
+        'Have hypertension:',
+        np.unique(['Yes', 'No']))
 
-  hypertension = st.selectbox(
-        'Your hypertension:',
-        np.unique(df['hypertension']))
+  if hypertension == 'Yes':
+    hypertension = 1
+  elif hypertension == 'No':
+    hypertension = 0
 
 
   heart_disease = st.radio(
         'Have Heart Disease:',
-        np.unique(df['heart_disease']))
+        np.unique(['Yes', 'No']))
+  if heart_disease == 'Yes':
+    heart_disease = 1
+  elif heart_disease == 'No':
+    heart_disease = 0
 
 
   ever_married = st.radio(
         'Have you been ever married?:',
         np.unique(df['ever_married']))
   
-  work_type = st.selectbox(
+  work_type = st.radio(
         'Work Type:',
         np.unique(df['work_type']))
 
