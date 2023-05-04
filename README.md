@@ -37,6 +37,10 @@ meaning our model can predict 100% of the time patients that don't have stroke
 
 ![score](https://user-images.githubusercontent.com/103885606/232896745-f6c6d51d-197b-460f-84fb-dc2b508e2d3c.JPG)
 
+## Deployment
+I have deployed this model and turned it into an interactive web app using Streamlit. Interact with the web app by clicking this link:
+https://kamal-moha-stroke-prediction-app-r89nxn.streamlit.app/
+
 ## Limitations & Next Steps
 
 ### Limitations
