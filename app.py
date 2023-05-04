@@ -40,9 +40,9 @@ def predict_stroke(gender, age, hypertension, heart_disease, ever_married,
        smoking_status]])[0]
   print(prediction)
   if prediction == 0:
-    return 'Negative. You are good'
+    return "Negative, you don't have Heart Stroke.  You are good to go"
   elif prediction == 1:
-    return 'Positive. You are most likely to have stroke. See a doctor now'
+    return "Positive. You are most likely to have stroke. See a doctor NOW!"
 
 
 def main():
