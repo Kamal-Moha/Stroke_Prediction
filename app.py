@@ -101,7 +101,7 @@ def main():
     result = predict_stroke(gender, age, hypertension, heart_disease, ever_married,
        work_type, residence_type, avg_glucose_level, bmi,
        smoking_status)
-  st.success(f'The output is: {result}')
+  st.success(f'The output is: **{result}**')
 
 
 if __name__ == '__main__':
