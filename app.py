@@ -11,7 +11,7 @@ df = pd.read_csv('stroke-data.csv')
 le=LabelEncoder()
 
 # Load our model
-pickle_in = open('best_knn_model.pkl', 'rb')
+pickle_in = open('best_vc_ensemble.pkl', 'rb')
 model = pickle.load(pickle_in)
 
 
